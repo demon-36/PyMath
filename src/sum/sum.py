@@ -4,21 +4,20 @@ class Sum():
 	def __call__(self, *args):
 		pass
 	def sum(self, first_number, second_number):
-		print(first_number, second_number)
-		len_fr = len(first_number)
-		len_sc = len(second_number)
+		len_fn = len(first_number)
+		len_sn = len(second_number)
 		sum_str = ""
 		carry = 0
-		if len_fr > len_sc :
-			for less in range(0, len_fr-len_sc):
+		if len_fn > len_sn :
+			for less in range(0, len_fn-len_sn):
 				second_number = "0" + second_number
-		elif len_fr < len_sc :
-			for less in range(0, len_sc-len_fr):
+		elif len_fn < len_sn :
+			for less in range(0, len_sn-len_fn):
 				first_number = "0" + first_number
 		
-		len_fr = len(first_number)
-		len_sc = len(second_number)
-		for digit in range(len_fr-1, -1, -1):
+		len_fn = len(first_number)
+		len_sn = len(second_number)
+		for digit in range(len_fn-1, -1, -1):
 			inst_sum = int(first_number[digit]) + int(second_number[digit]) + carry
 			if inst_sum < 10:
 				sum_str = str(inst_sum) + sum_str
@@ -36,5 +35,5 @@ def test():
 	second_number = "4579437580435205843954735084375348654651426598419792465461149254839575543895788828930478958897324059879874298098779834548657412341859743658957654382976594386552650943865651908349059874399855409854437565089437545890743408597348573409857654104389875219988041575890514589043799857349057243890750984375908437593458897287198455456465465465465458958947356083475034987046927286907956087032968430676892738906795607843209670697589067582890768973489279056759674095705486959806985467908436083587857098465097256894385046578567848347503458435795234054385359348573485923479"
 	sum_obj = Sum()
 	product = sum_obj.sum(first_number, second_number)
-
+	print (product)
 test()
